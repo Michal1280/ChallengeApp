@@ -1,29 +1,33 @@
-﻿//Integer numbers variable.
-//var myAge = 33;
-int myAge = 120;
-int newAge = myAge + 5;
-int myVar = int.MinValue;
-uint myVar2  = uint.MaxValue;
-long myVar3 = long.MaxValue;
+﻿var name = "Tomasz";
+var age = 17;
+var gender = "man";
 
+if (name is string)
+{
+    Console.WriteLine("Variable name is string");
+}
 
-// Decimal numbers, float it is enough for most of the cases. 
-float myNumber = float.MaxValue;
-double myNumber2 = double.MaxValue;
-decimal myNumber3 = decimal.MaxValue;
+if (age is int)
+{
+    Console.WriteLine("Variable age is int");
+}
 
-//String Variable
-string name = "Michal";
-string surname = "Zebrowski";
-string result = name + surname + myAge;
-//Console.WriteLine(result);
+if (gender is string)
+{
+    Console.WriteLine("Variable gender is string");
+}
 
-//Sign variable
-char myVar4 = '$';
-var result2 = name.ToArray();
+if((age < 30) && (gender =="woman"))
+{
+    Console.WriteLine("Koieta poniżej 30 lat");
+}
 
-//Logical variable
-bool isActive  = true;
-isActive = false;
-var isValid = 5 > 6;
-Console.WriteLine(isValid);
+if ((name == "Ewa") && (age == 33))
+{
+    Console.WriteLine("Ewa, lat 33");
+}
+
+if ((age < 18)&&(gender=="man"))
+{
+    Console.WriteLine("Niepełnoletni mężczyzna");
+}
