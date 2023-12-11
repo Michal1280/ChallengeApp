@@ -1,33 +1,22 @@
-﻿var name = "Tomasz";
-var age = 17;
-var gender = "man";
+﻿// Prepare program which check number of digits in the number. 
 
-if (name is string)
+int number = 4566;
+string numberInString = number.ToString();
+char[] letters = numberInString.ToArray();
+for (int i = 0; i <= 9; i++)
 {
-    Console.WriteLine("Variable name is string");
-}
-
-if (age is int)
-{
-    Console.WriteLine("Variable age is int");
-}
-
-if (gender is string)
-{
-    Console.WriteLine("Variable gender is string");
-}
-
-if((age < 30) && (gender =="woman"))
-{
-    Console.WriteLine("Koieta poniżej 30 lat");
-}
-
-if ((name == "Ewa") && (age == 33))
-{
-    Console.WriteLine("Ewa, lat 33");
-}
-
-if ((age < 18)&&(gender=="man"))
-{
-    Console.WriteLine("Niepełnoletni mężczyzna");
+    string digit = Convert.ToString(i);
+    int numberdigits = 0;
+    foreach (char letter in letters)
+    {
+        string letterInString = letter.ToString(); 
+        if (letterInString == digit)
+        {
+            numberdigits++;
+        }
+    }
+    if (numberdigits > 0)
+    {
+        Console.WriteLine("In number "+number+" we have " + numberdigits + " digits "+ digit);
+    }
 }
