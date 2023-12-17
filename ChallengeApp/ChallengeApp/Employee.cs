@@ -1,6 +1,6 @@
 ﻿namespace ChallengeApp
 {
-    internal class Employee
+    public class Employee
     {
         private List<int> score = new List<int>();
         public Employee(string name, string surname, int age)
@@ -13,11 +13,11 @@
         public string Surname { get; private set; }
         public int Age { get; private set; }
 
-        public float ResultAverage
+        public int Result
         {
             get
             {
-                return ((float)this.score.Sum() / 5);
+                return (this.score.Sum());
             }
         }
         public void AddScore(int number)
