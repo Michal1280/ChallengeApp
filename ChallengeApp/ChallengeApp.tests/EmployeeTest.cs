@@ -2,11 +2,11 @@ using NuGet.Frameworks;
 
 namespace ChallengeApp.tests
 {
-    public class Tests
+    public class EmployeeTests
     {
 
         [Test]
-        public void WhenEmployeeCollectTwoScores_ShouldCorrectReultFromSum()
+        public void WhenEmployeeCollectAllPoints_ShouldReturnSum ()
         {
             //arrange
             var user5 = new Employee("Wojtek", "Zebrowski", 15);
