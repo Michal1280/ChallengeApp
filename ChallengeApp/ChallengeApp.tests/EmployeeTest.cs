@@ -6,20 +6,54 @@ namespace ChallengeApp.tests
     {
 
         [Test]
-        public void WhenEmployeeCollectAllPoints_ShouldReturnSum ()
+        public void WhenEmployeeCollectAllPoints_ShouldReturnMaxValue ()
         {
             //arrange
-            var user5 = new Employee("Wojtek", "Zebrowski", 15);
-            user5.AddScore(5);
-            user5.AddScore(7);
-            user5.AddScore(8);
-            user5.AddScore(-2);
-            user5.AddScore(-18);
+            var employee1 = new Employee("Wojtek", "Zebrowski");
+            employee1.AddGrade(5);
+            employee1.AddGrade(10);
+            employee1.AddGrade(-10);
+            employee1.AddGrade(20);
+            employee1.AddGrade(15);
             //act
-            var result = user5.Result;
+            var statistics = employee1.GetStatistics();
             //assert
-            Assert.AreEqual(0, result);
+            Assert.AreEqual(20, statistics.Max);
         }
+
+        [Test]
+        public void WhenEmployeeCollectAllPoints_ShouldReturnMinValue()
+        {
+            //arrange
+            var employee1 = new Employee("Tomek", "Zebrowski");
+            employee1.AddGrade(0);
+            employee1.AddGrade(0);
+            employee1.AddGrade(0);
+            employee1.AddGrade(0);
+            employee1.AddGrade(5);
+            //act
+            var statistics = employee1.GetStatistics();
+            //assert
+            Assert.AreEqual(0, statistics.Min);
+        }
+
+        [Test]
+        public void WhenEmployeeCollectAllPoints_ShouldReturnAverageValue()
+        {
+            //arrange
+            var employee1 = new Employee("Tomek", "Zebrowski");
+            employee1.AddGrade(0);
+            employee1.AddGrade(0);
+            employee1.AddGrade(0);
+            employee1.AddGrade(0);
+            employee1.AddGrade(0);
+            //act
+            var statistics = employee1.GetStatistics();
+            //assert
+            Assert.AreEqual(0, statistics.Average);
+        }
+
+
 
     }
 }
