@@ -13,9 +13,43 @@
         public string Surname { get; private set; }
 
 
+        public void AddGrade(int grade)
+        {
+            if (grade >= 0 && grade <= 100)
+            {
+                this.grades.Add(grade);
+            }
+            else
+            {
+                Console.WriteLine("Data is incorrect, grade should be 0-100");
+            }
+        }
+        public void AddGrade(string grade)
+        {
+            if (float.TryParse(grade, out float result))
+            {
+                this.AddGrade(result);
+            }
+            else
+            {
+                Console.WriteLine("String is not float");
+            }
+
+        }
         public void AddGrade(float grade)
         {
-            this.grades.Add(grade);
+            var valueInInt = (int)grade;
+            this.AddGrade(valueInInt);
+        }
+        public void AddGrade(double grade)
+        {
+            var valueInInt = (int)grade;
+            this.AddGrade(valueInInt);
+        }
+        public void AddGrade(long grade)
+        {
+            var valueInInt = (int)grade;
+            this.AddGrade(valueInInt);
         }
         public Statistics GetStatistics()
         {

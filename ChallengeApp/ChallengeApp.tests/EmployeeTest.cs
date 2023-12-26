@@ -42,15 +42,13 @@ namespace ChallengeApp.tests
         {
             //arrange
             var employee1 = new Employee("Tomek", "Zebrowski");
-            employee1.AddGrade(0);
-            employee1.AddGrade(0);
-            employee1.AddGrade(0);
-            employee1.AddGrade(0);
-            employee1.AddGrade(0);
+            employee1.AddGrade(2);
+            employee1.AddGrade(1);
+            employee1.AddGrade(1);
             //act
             var statistics = employee1.GetStatistics();
             //assert
-            Assert.AreEqual(0, statistics.Average);
+            Assert.AreEqual(1.33, Math.Round(statistics.Average,2));
         }
 
 
