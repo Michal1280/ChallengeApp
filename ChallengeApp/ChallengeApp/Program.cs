@@ -1,26 +1,29 @@
 ﻿using ChallengeApp;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 var employee = new Employee("Michal", "Tomasiuk");
-employee.AddGrade("Michal");
-employee.AddGrade("2");
-employee.AddGrade(2);
-employee.AddGrade(200);
-employee.AddGrade(6);
-employee.AddGrade(6.66);
-employee.AddGrade(96.55);
-var statistics = employee.GetStatisticsForEach();
-Console.WriteLine($"This is Max Value from foreach loop: {statistics.Max}");
-Console.WriteLine($"This is Min Value from foreach loop: {statistics.Min}");
-Console.WriteLine($"This is Average Value from foreach loop : {statistics.Average:N2}");
-var statistics1 = employee.GetStatisticsFor();
-Console.WriteLine($"This is Max Value from for loop: {statistics1.Max}");
-Console.WriteLine($"This is Min Value from for loop: {statistics1.Min}");
-Console.WriteLine($"This is Average Value from for loop : {statistics1.Average:N2}");
-var statistics2 = employee.GetStatisticsWhile();
-Console.WriteLine($"This is Max Value from while loop: {statistics2.Max}");
-Console.WriteLine($"This is Min Value from while loop: {statistics2.Min}");
-Console.WriteLine($"This is Average Value from while loop : {statistics2.Average:N2}");
-var statistics3 = employee.GetStatisticsDoWhile();
-Console.WriteLine($"This is Max Value from do ... while loop: {statistics3.Max}");
-Console.WriteLine($"This is Min Value from do ... while loop: {statistics3.Min}");
-Console.WriteLine($"This is Average Value from do ... while loop : {statistics3.Average:N2}");
+Console.WriteLine("Welcome in program XYZ for marking employees");
+Console.WriteLine("===========================================");
+Console.WriteLine("");
+
+while (true)
+{
+    Console.WriteLine("Please fill in next mark for employee.To Exit please isert 'q' ");
+    var input = Console.ReadLine();
+    if (input == "q")
+    {
+        break;
+    } else if ((input == "A")||(input == "a")||(input == "B")||(input == "b")||(input == "C")||(input == "c")||(input == "D")||(input == "d")||(input == "E")||(input == "e"))
+    {
+       char temp = char.Parse(input);
+        employee.AddGrade(temp);
+    }else
+    {
+        employee.AddGrade(input);
+    }
+   
+}
+var statistics = employee.GetStatistics();
+Console.WriteLine($"This is Average value:{statistics.Average}");
+Console.WriteLine($"This is Min value:{statistics.Min}");
+Console.WriteLine($"This is Max value: {statistics.Max}");
