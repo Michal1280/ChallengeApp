@@ -8,7 +8,7 @@ Console.WriteLine("");
 
 while (true)
 {
-    Console.WriteLine("Please fill in next mark for employee.To Exit please isert 'q' ");
+    Console.WriteLine("Please fill in next mark for employee.To Exit please insert 'q' ");
     var input = Console.ReadLine();
     if (input == "q")
     {

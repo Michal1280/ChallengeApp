@@ -51,6 +51,20 @@ namespace ChallengeApp.tests
             Assert.AreEqual(1.33, Math.Round(statistics.Average,2));
         }
 
+        [Test]
+        public void WhenEmployeeCollectAllPoints_ShouldReturnAverageValueInLetter()
+        {
+            //arrange
+            var employee1 = new Employee("Tomek", "Zebrowski");
+            employee1.AddGrade(98);
+            employee1.AddGrade(99);
+            employee1.AddGrade(100);
+            //act
+            var statistics = employee1.GetStatistics();
+            //assert
+            Assert.AreEqual('A', statistics.AverageLetter);
+        }
+
 
 
     }
