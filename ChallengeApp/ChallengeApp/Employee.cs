@@ -2,20 +2,25 @@
 
 namespace ChallengeApp
 {
-    public class Employee
-       
+    public class Employee : Person
+
     {
         private const char sex = 'M';
 
         private List<float> grades = new List<float>();
-        public Employee(string name, string surname)
-        {
-            this.Name = name;
-            this.Surname = surname;
-        }
 
-        public string Name { get; private set; }
-        public string Surname { get; private set; }
+        public Employee()
+             : this("no name")
+        {
+        }
+        public Employee(string name)
+           : this("no name", "no surname", 'N')
+        {
+        }
+        public Employee(string name, string surname, char sex)
+            : base(name, surname, sex)
+        {
+        }
 
 
         public void AddGrade(int grade)
@@ -62,23 +67,23 @@ namespace ChallengeApp
             {
                 case 'A':
                 case 'a':
-                    this.grades.Add(100);
+                    AddGrade(100);
                     break;
                 case 'B':
                 case 'b':
-                    this.grades.Add(80);
+                    AddGrade(80);
                     break;
                 case 'C':
                 case 'c':
-                    this.grades.Add(60);
+                    AddGrade(60);
                     break;
                 case 'D':
                 case 'd':
-                    this.grades.Add(40);
+                    AddGrade(40);
                     break;
                 case 'E':
                 case 'e':
-                    this.grades.Add(20);
+                    AddGrade(20);
                     break;
                 default:
                     throw new Exception("Wrong Letter");
@@ -102,7 +107,7 @@ namespace ChallengeApp
                 }
             }
             statistics.Average = statistics.Average / this.grades.Count;
-            switch(statistics.Average)
+            switch (statistics.Average)
             {
                 case var a when a >= 80:
                     statistics.AverageLetter = 'A';
