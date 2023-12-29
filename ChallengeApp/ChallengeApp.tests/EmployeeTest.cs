@@ -64,8 +64,5 @@ namespace ChallengeApp.tests
             //assert
             Assert.AreEqual('A', statistics.AverageLetter);
         }
-
-
-
     }
 }

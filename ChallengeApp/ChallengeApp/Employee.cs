@@ -3,7 +3,10 @@
 namespace ChallengeApp
 {
     public class Employee
+       
     {
+        private const char sex = 'M';
+
         private List<float> grades = new List<float>();
         public Employee(string name, string surname)
         {
@@ -23,7 +26,7 @@ namespace ChallengeApp
             }
             else
             {
-                Console.WriteLine("Data is incorrect, grade should be 0-100");
+                throw new Exception("Data grade is invalid, should be 0-100");
             }
         }
         public void AddGrade(string grade)
@@ -34,7 +37,7 @@ namespace ChallengeApp
             }
             else
             {
-                Console.WriteLine("String is not float");
+                throw new Exception("String is not float");
             }
 
         }
@@ -55,7 +58,7 @@ namespace ChallengeApp
         }
         public void AddGrade(char grade)
         {
-            switch(grade)
+            switch (grade)
             {
                 case 'A':
                 case 'a':
@@ -78,11 +81,9 @@ namespace ChallengeApp
                     this.grades.Add(20);
                     break;
                 default:
-                    Console.WriteLine("Wrong Letter");
-                    break;
+                    throw new Exception("Wrong Letter");
+
             }
-            //var valueInInt = (int)grade;
-            //this.AddGrade(valueInInt);
         }
         public Statistics GetStatistics()
         {
