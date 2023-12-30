@@ -5,7 +5,6 @@ namespace ChallengeApp
     public class Employee
 
     {
-        private const char sex = 'M';
 
         private List<float> grades = new List<float>();
         public Employee(string name, string surname)
