@@ -5,18 +5,8 @@ namespace ChallengeApp
     public class Employee : Person
 
     {
-        private const char sex = 'M';
 
         private List<float> grades = new List<float>();
-
-        public Employee()
-             : this("no name")
-        {
-        }
-        public Employee(string name)
-           : this("no name", "no surname", 'N')
-        {
-        }
         public Employee(string name, string surname, char sex)
             : base(name, surname, sex)
         {
