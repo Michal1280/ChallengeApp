@@ -2,20 +2,6 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 var employee = new Employee("Michal", "Tomasiuk", 'M');
-//try
-//{
-//    Employee emp = null;
-//    var name = emp.Name;
-//}
-//catch (Exception exception)
-//{
-//    Console.WriteLine(exception.Message);
-//}
-//finally
-//{
-//    Console.WriteLine("Finally here");
-//}
-
 Console.WriteLine("Welcome in program XYZ for marking employees");
 Console.WriteLine("===========================================");
 Console.WriteLine("");

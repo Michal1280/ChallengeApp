@@ -5,14 +5,11 @@ namespace ChallengeApp
     public class Employee : Person
 
     {
-
         private List<float> grades = new List<float>();
         public Employee(string name, string surname, char sex)
             : base(name, surname, sex)
         {
         }
-
-
         public void AddGrade(int grade)
         {
             if (grade >= 0 && grade <= 100)
@@ -115,10 +112,7 @@ namespace ChallengeApp
                     statistics.AverageLetter = 'E';
                     break;
             }
-
             return statistics;
         }
-
-
     }
 }
