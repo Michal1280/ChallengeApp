@@ -1,8 +1,7 @@
 ﻿using ChallengeApp;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-var employee = new Employee("Michal", "Tomasiuk");
-
+var employee = new Employee("Michal", "Tomasiuk", 'M');
 //try
 //{
 //    Employee emp = null;
