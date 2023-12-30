@@ -28,9 +28,10 @@ while (true)
     if (input == "q")
     {
         break;
-    } else if ((input == "A")||(input == "a")||(input == "B")||(input == "b")||(input == "C")||(input == "c")||(input == "D")||(input == "d")||(input == "E")||(input == "e"))
+    }
+    else if ((input == "A") || (input == "a") || (input == "B") || (input == "b") || (input == "C") || (input == "c") || (input == "D") || (input == "d") || (input == "E") || (input == "e"))
     {
-       char temp = char.Parse(input);
+        char temp = char.Parse(input);
         try
         {
             employee.AddGrade(temp);
@@ -39,8 +40,9 @@ while (true)
         {
             Console.WriteLine($"Exception catched: {ex.Message}");
         }
-        
-    }else
+
+    }
+    else
     {
         try
         {
@@ -51,7 +53,7 @@ while (true)
             Console.WriteLine($"Exception catched: {ex.Message}");
         }
     }
-   
+
 }
 var statistics = employee.GetStatistics();
 Console.WriteLine($"This is Average value:{statistics.Average:N2}");

@@ -3,7 +3,7 @@
 namespace ChallengeApp
 {
     public class Employee
-       
+
     {
         private const char sex = 'M';
 
@@ -102,7 +102,7 @@ namespace ChallengeApp
                 }
             }
             statistics.Average = statistics.Average / this.grades.Count;
-            switch(statistics.Average)
+            switch (statistics.Average)
             {
                 case var a when a >= 80:
                     statistics.AverageLetter = 'A';
