@@ -1,15 +1,19 @@
 ﻿using System.Diagnostics;
 
 namespace ChallengeApp
+    //How to do that ?
 {
-    public class Employee : Person
+    public class Employee : IEmployee
 
     {
         private List<float> grades = new List<float>();
-        public Employee(string name, string surname, char sex)
-            : base(name, surname, sex)
+        public Employee(string name, string surname)
         {
+            this.Name = name;
+            this.Surname=surname;
         }
+        public string Name { get; private set; }
+        public string Surname { get; private set; }
         public void AddGrade(int grade)
         {
             if (grade >= 0 && grade <= 100)
