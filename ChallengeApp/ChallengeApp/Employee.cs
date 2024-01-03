@@ -25,6 +25,7 @@ namespace ChallengeApp
                 throw new Exception("Data grade is invalid, should be 0-100");
             }
         }
+
         public void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
@@ -37,11 +38,13 @@ namespace ChallengeApp
             }
 
         }
+
         public void AddGrade(float grade)
         {
             var valueInInt = (int)grade;
             this.AddGrade(valueInInt);
         }
+
         public void AddGrade(double grade)
         {
             var valueInInt = (int)grade;
@@ -52,6 +55,7 @@ namespace ChallengeApp
             var valueInInt = (int)grade;
             this.AddGrade(valueInInt);
         }
+
         public void AddGrade(char grade)
         {
             switch (grade)
@@ -81,6 +85,7 @@ namespace ChallengeApp
 
             }
         }
+
         public Statistics GetStatistics()
         {
             var statistics = new Statistics();

@@ -11,7 +11,6 @@ namespace ChallengeApp
         void AddGrade(string grade);
         void AddGrade(float grade);
         void AddGrade(double grade);
-        void AddGrade(long grade);
         void AddGrade(char grade);
         Statistics GetStatistics();
     }
