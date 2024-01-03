@@ -1,7 +1,7 @@
 ﻿using ChallengeApp;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-var employee = new Employee("Michal", "Tomasiuk");
+var employee = new Supervisor("Michal", "Tomasiuk", 'M');
 Console.WriteLine("Welcome in program XYZ for marking employees");
 Console.WriteLine("===========================================");
 Console.WriteLine("");
