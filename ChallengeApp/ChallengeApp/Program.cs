@@ -5,64 +5,35 @@ var employee = new EmployeeInFile("Michal", "Tomasiuk");
 Console.WriteLine("Welcome in program XYZ for marking employees");
 Console.WriteLine("===========================================");
 Console.WriteLine("");
-try
+var grades = new List<object>();
+grades = [10, 20, 30, 'e', 'B', 101, -200];
+foreach (var grade in grades) 
 {
-    employee.AddGrade(10);
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Exception catched: {ex.Message}");
-}
-try
-{
-    employee.AddGrade(20);
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Exception catched: {ex.Message}");
-}
-try
-{
-    employee.AddGrade(30);
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Exception catched: {ex.Message}");
-}
-
-try
-{
-    employee.AddGrade('e');
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Exception catched: {ex.Message}");
+    if (grade.GetType().Name == "Int32")
+    {
+        try
+        {
+            employee.AddGrade((int)grade);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception catched: {ex.Message}");
+        }
+    }
+    else if (grade.GetType().Name == "Char")
+    {
+        try
+        {
+            employee.AddGrade((char)grade);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception catched: {ex.Message}");
+        }
+    }
 }
 
-try
-{
-    employee.AddGrade('b');
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Exception catched: {ex.Message}");
-}
-try
-{
-    employee.AddGrade(101);
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Exception catched: {ex.Message}");
-}
-try
-{
-    employee.AddGrade(-200);
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Exception catched: {ex.Message}");
-}
+
 
 //while (true)
 //{
